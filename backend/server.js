@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
  
-app.use(cors({ origin: "https://your-frontend.vercel.app" }));
+app.use(cors({ origin: "https://slots-kr12.vercel.app" }));
 
 
 const mongoURI = process.env.MONGO_URI; 
