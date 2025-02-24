@@ -10,7 +10,7 @@ const io = new Server(server, { cors: { origin: "*" } });
  
 app.use(cors({ origin: "https://slots-kr12.vercel.app" }));
 
-
+app.use(express.json());
 const mongoURI = process.env.MONGO_URI; 
 // Connect to MongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
