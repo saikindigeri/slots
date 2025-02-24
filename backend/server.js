@@ -24,6 +24,7 @@ const io = new Server(server, {
 });
 
 
+app.use(express.json());
 
 const mongoURI = process.env.MONGO_URI; 
 // Connect to MongoDB
