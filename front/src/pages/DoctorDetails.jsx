@@ -95,7 +95,7 @@ const DoctorDetails = () => {
       })
       
       .catch((err) => console.error("Error booking appointment:", err));
-      toast.error("Error with booking appointment")
+     
   };
 
   return (
