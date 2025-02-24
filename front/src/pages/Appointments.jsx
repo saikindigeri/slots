@@ -89,8 +89,8 @@ const Appointments = () => {
     if (
       !editData.patientName ||
       !editData.appointmentType ||
-      !editData.notes ||
-      !selectedSlot
+      !editData.notes 
+    
     ) {
       alert("Enter all fields");
       return;
