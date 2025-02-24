@@ -7,7 +7,7 @@ const DoctorsPage = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/doctors")
+    axios.get("https://slots-1-tmrk.onrender.com/doctors")
       .then((res) => setDoctors(res.data))
      
       .catch((err) => console.error("Error fetching doctors:", err));

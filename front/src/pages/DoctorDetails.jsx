@@ -8,7 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-const socket = io("http://localhost:5000");
+const socket = io("https://slots-1-tmrk.onrender.com");
 
 const DoctorDetails = () => {
   const { id } = useParams();
@@ -34,7 +34,7 @@ const DoctorDetails = () => {
       console.log("Selected Date:", date.toLocaleDateString());
 
       axios
-        .get(`http://localhost:5000/doctors/${id}/slots?date=${formattedDate}`)
+        .get(`https://slots-1-tmrk.onrender.com/doctors/${id}/slots?date=${formattedDate}`)
         .then((res) => {
           setSlots(res.data.slots || []);
           console.log(res.data.slots);
@@ -86,7 +86,7 @@ const DoctorDetails = () => {
     };
 
     axios
-      .post("http://localhost:5000/appointments", appointment)
+      .post("https://slots-1-tmrk.onrender.com/appointments", appointment)
       .then(() => {
         socket.emit("appointment update");
         toast.success("Appointment booked successfully!");

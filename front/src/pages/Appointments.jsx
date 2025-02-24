@@ -28,7 +28,7 @@ const Appointments = () => {
       console.log("Selected Date:", date.toLocaleDateString());
 
       axios
-        .get(`http://localhost:5000/doctors/${id}/slots?date=${formattedDate}`)
+        .get(`https://slots-1-tmrk.onrender.com/doctors/${id}/slots?date=${formattedDate}`)
         .then((res) => {
           setSlots(res.data.slots || []);
           console.log(res.data.slots);
@@ -49,7 +49,7 @@ const Appointments = () => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/appointments");
+      const res = await axios.get("https://slots-1-tmrk.onrender.com/appointments");
       setAppointments(res.data);
     } catch (error) {
       console.error("Error fetching appointments:", error);
@@ -58,7 +58,7 @@ const Appointments = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/appointments/${id}`);
+      await axios.delete(`https://slots-1-tmrk.onrender.com/appointments/${id}`);
       toast.success("Appointment deleted successfully!");
       fetchAppointments();
      
@@ -103,7 +103,7 @@ const Appointments = () => {
       duration: 30,
     };
     try {
-      axios.put(`http://localhost:5000/appointments/${apptid}`, appointment);
+      axios.put(`https://slots-1-tmrk.onrender.com/appointments/${apptid}`, appointment);
       toast.success("Appointment updated successfully!");
       setEditing(null);
 
