@@ -8,8 +8,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
  
-app.use(cors({ origin: "*" })); 
-app.use(express.json());
+app.use(cors({ origin: "https://your-frontend.vercel.app" }));
+
+
 const mongoURI = process.env.MONGO_URI; 
 // Connect to MongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
