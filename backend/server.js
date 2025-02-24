@@ -6,9 +6,23 @@ const http = require("http");
 require("dotenv").config();
 const app = express(); 
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: "*" } });
+
  
-app.use(cors({ origin: "https://slots-kr12.vercel.app" }));
+app.use(
+  cors({
+    origin: ["https://slots-kr12.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+const io = new Server(server, {
+  cors: {
+    origin: "https://slots-kr12.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
+});
+
 
 
 const mongoURI = process.env.MONGO_URI; 
