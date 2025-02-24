@@ -45,7 +45,8 @@ const Appointments = () => {
 
   useEffect(() => {
     fetchAppointments();
-  }, [date, selectedSlot]);
+  }, [date, selectedSlot,appointments]);
+
 
   const fetchAppointments = async () => {
     try {

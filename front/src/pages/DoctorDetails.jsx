@@ -34,7 +34,7 @@ const DoctorDetails = () => {
       console.log("Selected Date:", date.toLocaleDateString());
 
       axios
-        .get(`https://slots-1-tmrk.onrender.com/doctors/${id}/slots?date=${formattedDate}`)
+        .get(`https://slots-1-tmrk.onrender.com/doctors/${id}/slots?date=${formattedDate}`) //fetch slots based on doctor_id and selected date
         .then((res) => {
           setSlots(res.data.slots || []);
           console.log(res.data.slots);
@@ -65,7 +65,7 @@ const DoctorDetails = () => {
     setError("");
   };
 
-
+ //posting appointment to the backend
   const handleSubmit = (e) => {
     e.preventDefault();
 
